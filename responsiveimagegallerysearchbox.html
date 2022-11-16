@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gallery Search Box</title>
+        <link href="../libs/fontawesomepro/css/all.min.css" rel="stylesheet" type="text/css" />
+        <style type="text/css">
+            *{
+                margin:0;
+                padding:0;
+                box-sizing:border-box;
+                font-family:sans-serif;
+            }
+            .container{
+                min-height:100vh;
+                max-width:1000px;
+                width:100%;
+                margin:0 auto;
+                padding:40px 20px;
+                /* background:red; */
+                position:relative;
+            }
+            .container .search-box{
+                position:relative;
+                height:42px;
+                max-width:400px;
+                /* background:green; */
+                margin:0 auto;
+                margin-bottom:40px;
+            }
+            .search-box input{
+                position:absolute;
+                height:100%;
+                width:100%;
+                outline:none;
+                border:none;
+                background:#323334;
+                       /* top  right  bottom  left */
+                padding:0 15px 0 45px;
+                color:#fff;
+                border-radius:6px;
+            }
+            .search-box i{
+                position:absolute;
+                z-index:2;
+                color:#999;
+                font-size:20px;
+                top:50%;
+                left:15px;
+                transform:translateY(-50%);
+            }
+            .images{
+                margin:0 auto;
+            }
+            .container .images .image-box{
+                position:relative;
+                height:300px;
+                width:210px;
+                overflow:hidden;
+                border-radius:6px;
+            }
+            .images{
+                width:100%;
+                display:flex;
+                justify-content:center;
+                flex-wrap:wrap;
+            }
+            .images .image-box{
+                margin:8px;
+            }
+            .images .image-box img{
+                width:100%;
+                height:100%;
+                object-fit:cover;
+                border-radius:6px;
+                transition:transform 0.3s linear;
+            }
+            .images .image-box:hover img{
+                transform:scale(1.05);
+            }
+            .images .image-box h6{
+                color:#fff;
+                position:absolute;
+                bottom:10px;
+                left:10px;
+                font-size:14px;
+                font-weight:500;
+            }
+         
+
+
+
+
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="search-box">
+                <i class="far fa-search"></i>
+                <input type="text" class="" placeholder="Search a movie" />
+            </div>
+        
+
+        <div class="images">
+            <div class="image-box" data-name="spiderman">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHDn1YcGpY3I4mjHznH3vIt7OZqq7NypDXlr1Dkj34Z2JzrACR_yhPwKdnh6ueNBmUJeg&usqp=CAU" alt="">
+                <h6>Spiderman</h6>
+            </div>
+
+            <div class="image-box" data-name="joker">
+                <img src="https://filmdaily.co/wp-content/uploads/2021/06/joker-lede-1300x1839.jpeg" alt="">
+                <h6>Joker</h6>
+            </div>
+
+            <div class="image-box" data-name="ironman">
+                <img src="https://images.unsplash.com/photo-1623984109622-f9c970ba32fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aXJvbm1hbnxlbnwwfHwwfHw%3D&w=1000&q=80" alt="">
+                <h6>Ironman</h6>
+            </div>
+
+            <div class="image-box" data-name="passenger">
+                <img src="https://i.insider.com/6250b47a00ada10018fc2d92?width=1009&format=jpeg" alt="">
+                <h6>Passenger</h6>
+            </div>
+
+            <div class="image-box" data-name="space">
+                <img src="https://cdn-res.keymedia.com/cms/images/us/018/0223_637110526436217000.jpg" alt="">
+                <h6>The Space</h6>
+            </div>
+
+            <div class="image-box" data-name="spiderman">
+                <img src="https://gmedia.playstation.com/is/image/SIEPDC/marvels-spider-man-e3-2018-screen-03-ps4-us-11jun18?$native$" alt="">
+                <h6>spiderman2</h6>
+            </div>
+
+            <div class="image-box" data-name="universe">
+                <img src="https://cdn-static.findly.com/wp-content/uploads/sites/1004/2019/11/HC8311-unistu-cws-upr-home-1261x685px.jpg" alt="">
+                <h6>The Universe</h6>
+            </div>
+
+            <div class="image-box" data-name="spiderman">
+                <img src="https://cdn.vox-cdn.com/thumbor/L3uWt_p1CahG4rmMopcw2Q6gkxc=/104x0:3104x2000/1400x1400/filters:focal(104x0:3104x2000):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/45660742/spiderman.0.0.jpg" alt="">
+                <h6>The Spiderman3</h6>
+            </div>
+
+            <div class="image-box" data-name="holiday">
+                <img src="https://inspirationfeed.com/wp-content/uploads/2019/12/christmas-market-at-town-hall-square-in-the-old-ATDGN9R.jpg" alt="">
+                <h6>Holiday</h6>
+            </div>
+
+            <div class="image-box" data-name="ironman">
+                <img src="https://wallpapershdnow.com/images/movies/superhero/iron-man-2/iron-man-2-wallpaper-8.jpg" alt="">
+                <h6>Ironman2</h6>
+            </div>
+        </div>
+
+
+    </div>
+        
+
+
+
+
+
+        <script type="text/javascript">
+
+            let search = document.querySelector('.search-box input'),
+                  images = document.querySelectorAll('.image-box');
+
+
+            search.addEventListener("keyup",function(e){
+                if(e.key == "Enter"){
+                    let searcValue = search.value;
+                    value = searcValue.toLowerCase();
+                    images.forEach(image =>{
+                        if(value === image.dataset.name){
+                            return image.style.display = "block";
+                        }
+                        image.style.display = "none";
+                    })
+                }
+                console.log(e);
+            });
+
+            search.addEventListener('keyup', ()=>{
+                if(search.value != "") return;
+
+                images.forEach(image =>{
+                    image.style.display = "block";
+                })
+            })
+
+
+
+        </script>
+    </body>
+</html>

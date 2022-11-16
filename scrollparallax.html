@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Parallax</title>
+    <style type="text/css">
+      *{
+        margin:0;
+        padding:0;
+        font-family:sans-serif;
+      }
+      body{
+        background:#222;
+      }
+
+      .container{
+        width:100%;
+        height:auto;
+      }
+
+      section{
+        width:100%;
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+      }
+
+      .section div{
+        width:100%;
+        height:100vh;
+      }
+
+      section h1{
+        font-size:10rem;
+        color:#fff;
+      }
+
+      section#home{
+        background:linear-gradient(45deg,rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('../img/background4.jpg');
+        background-size:cover;
+        background-position:center;
+        background-repeat:no-repeat;
+        
+      }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <section id="home" class="parallax">
+      <div>
+       parallax
+      </div>
+    </section>
+
+    <section id="about">
+        <h1>Hi There!</h1>
+    </section>
+</div>
+    
+
+<script type="text/javascript">
+   
+let parallax = document.querySelector('.parallax');
+window.onscroll = ()=>{
+  let scrollTop = document.documentElement.scrollTop;
+  console.log(scrollTop);
+
+    parallax.style.backgroundPositionY = scrolltop * 0.7 + "px"
+}
+
+</script>
+</body>
+</html>

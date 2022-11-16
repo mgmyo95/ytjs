@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Magic line</title>
+        <link href="../libs/fontawesomepro/css/all.min.css" rel="stylesheet" type="text/css" />
+        <style type="text/css">
+            *{
+                margin:0;
+                padding:0;
+                box-sizing:border-box;
+            }
+            body{
+                height:100vh;
+                background:#273c75;
+
+                display:grid;
+                place-items:center;
+            }
+            ul{
+                position:relative;
+                border-radius:10px;
+                list-style-type:none;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                box-shadow:0 5px 25px rgba(0,0,0,0.25);
+            }
+            ul li a{
+                position:relative;
+                color:#fff;
+                text-decoration:none;
+                display:inline-block;
+                padding:20px 30px;
+                z-index:100;
+                backdrop-filter:blur(20px);
+            }
+
+            ul li a i{
+                font-size:2.6rem;
+                pointer-events:none;
+                opacity:0.25;
+                transition:all 0.3s;
+            }
+            ul li a:active i{
+                opacity:1;
+            }
+            #make{
+                position:absolute;
+                top:0;
+                transition:all 0.5s;
+                z-index:-2
+            }
+            #make::before{
+                content:'';
+                width:50px;
+                height:40px;
+                background:#8c7ae6;
+                border-radius:10px;
+                position:absolute;
+                top:-10px;
+                left:50%;
+                transform:translateX(-50%);
+
+            }
+            ul li:nth-child(1).active ~ #make::before{
+                background:#b5a8f5;
+                box-shadow:0 0 15px #b5a8f5,
+                0 0 30px #b5a8f5,
+                0 0 45px #b5a8f5,
+                0 0 65px #b5a8f5;
+            }
+
+            ul li:nth-child(2).active ~ #make::before{
+                background:#f7fa5f;
+                box-shadow:0 0 15px #f7fa5f,
+                0 0 30px #f7fa5f,
+                0 0 45px #f7fa5f,
+                0 0 65px #f7fa5f;
+            }
+
+            ul li:nth-child(3).active ~ #make::before{
+                background:#f05583;
+                box-shadow:0 0 15px #f05583,
+                0 0 30px #f05583,
+                0 0 45px #f05583,
+                0 0 65px #f05583;
+            }
+
+            ul li:nth-child(4).active ~ #make::before{
+                background:#5af187;
+                box-shadow:0 0 15px #5af187,
+                0 0 30px #5af187,
+                0 0 45px #5af187,
+                0 0 65px #5af187;
+            }
+
+            ul li:nth-child(5).active ~ #make::before{
+                background:#5665f1;
+                box-shadow:0 0 15px #5665f1,
+                0 0 30px #5665f1,
+                0 0 45px #5665f1,
+                0 0 65px #5665f1;
+            }
+
+            
+
+        </style>
+    </head>
+    <body>
+
+        <ul>
+            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+
+            <div id="make"></div>
+        </ul>
+        
+
+
+
+
+
+
+
+
+
+        <script type="text/javascript">
+
+            let make = document.querySelector("#make");
+            let list = document.querySelectorAll('ul li');
+
+
+            function movehover(c){
+                make.style.left = c.offsetLeft + "px";
+                make.style.width = c.offsetWidth + "px";
+            }
+
+            list.forEach(link=>{
+                link.addEventListener('mousemove',(a)=>{
+                    movehover(a.target);
+                });
+            });
+
+            function activelink(){
+                list.forEach((item)=>{
+                    item.classList.remove('active');
+                    this.classList.add('active');
+                });
+            };
+
+            list.forEach((item)=>{
+                item.addEventListener('mousemove',activelink);
+            })
+
+
+
+
+        </script>
+    </body>
+</html>

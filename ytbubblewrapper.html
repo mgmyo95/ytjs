@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bubble Wrapper</title>
+      
+        <style type="text/css">
+            body{
+                background:#222;
+            }
+           #bubble-wrapper{
+            height:100%;
+            width:100%;
+
+            position:fixed;
+            bottom:0px;
+            
+            overflow:hidden;
+            pointer-events:none;
+           }
+           .bubble{
+            height:max(300px, 30vw);
+            width:max(300px, 30vw);
+            background:rgba(33,150,243,0.2);
+         
+            border-radius:100%;
+
+            position:absolute;
+            top:100%;
+            left:50%;
+
+            animation:wave 2s ease-in-out infinite;
+           }
+
+           @keyframes wave{
+            from,to{
+                transform:translate(-50%,0%);
+            }
+            50%{
+                transform:translate(-50%,-20%);
+            }
+           }
+
+
+        </style>
+    </head>
+    <body>
+        
+        <div id="bubble-wrapper">
+            
+        </div>
+   
+
+
+    <script tpye="text/javascript">
+       const wrapper = document.getElementById('bubble-wrapper');
+       const animatebubble = x =>{
+       const bubble = document.createElement('div');
+       bubble.classList.add('bubble');
+       bubble.style.left = `${x}px`;
+       wrapper.appendChild(bubble);
+       setTimeout(()=>wrapper.removeChild(bubble),2000);
+       }
+
+       window.onmousemove = e => animatebubble(e.clientX);
+    </script>
+    </body>
+</html>

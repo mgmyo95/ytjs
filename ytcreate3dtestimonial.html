@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create 3D Testimonial</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+        <link href="./libs/fontawesomepro/css/all.min.css" rel="stylesheet" type="text/css" />
+        <style type="text/css">
+            *{
+                margin:0;
+                padding:0;
+
+            }
+            body{
+                height:100vh;
+                background:#1B9CFC;
+
+                /* display:flex;
+                justify-content:center;
+                align-items:center; */
+            }
+            .carousel{
+                height:600px;
+                perspective:250px;
+            }
+            .carousel .carousel-item{
+                width:450px;
+                background:#fff;
+                padding:50px;
+                height:auto;
+                text-align:center;
+                border-radius:15px;
+            }
+            .img-area{
+                width:100px;
+                height:100px;
+                margin:0 auto;
+                overflow:hidden;
+                border-radius:50%;
+                border:inset 8px deepskyblue;
+            }
+            .img-area img{
+                width:100%;
+            }
+            .testi p{
+                color:#3333;
+                font-size:18px;
+                line-height:1.9;
+            }
+            .testi h4{
+                font-size:20px;
+                margin:0;
+                color:#000;
+            }
+            .testi h5{
+                font-size:14px;
+                letter-spacing:5px;
+                margin:7px 0;
+            }
+        </style>
+    </head>
+    <body>
+       
+        <div class="carousel">
+
+            <a class="carousel-item" href="#">
+
+                <div class="testi">
+                    <div class="img-area">
+                        <img src="../img/img1.jpg" />
+                    </div>
+                    <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio amet cumque aspernatur, voluptatem autem doloribus et, "</p>
+                    <h4>Jessica Jones</h4>
+                    <h5>Web Designer</h5>
+                </div>
+
+            </a>
+
+            <a class="carousel-item" href="#">
+
+                <div class="testi">
+                    <div class="img-area">
+                        <img src="../img/img1.jpg" />
+                    </div>
+                    <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio amet cumque aspernatur, voluptatem autem doloribus et, "</p>
+                    <h4>Jessica Jones</h4>
+                    <h5>Web Designer</h5>
+                </div>
+
+            </a>
+
+            <a class="carousel-item" href="#">
+
+                <div class="testi">
+                    <div class="img-area">
+                        <img src="../img/img1.jpg" />
+                    </div>
+                    <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio amet cumque aspernatur, voluptatem autem doloribus et, "</p>
+                    <h4>Jessica Jones</h4>
+                    <h5>Web Designer</h5>
+                </div>
+
+            </a>
+
+            <a class="carousel-item" href="#">
+
+                <div class="testi">
+                    <div class="img-area">
+                        <img src="../img/img1.jpg" />
+                    </div>
+                    <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio amet cumque aspernatur, voluptatem autem doloribus et, "</p>
+                    <h4>Jessica Jones</h4>
+                    <h5>Web Designer</h5>
+                </div>
+
+            </a>
+
+            <a class="carousel-item" href="#">
+
+                <div class="testi">
+                    <div class="img-area">
+                        <img src="../img/img1.jpg" />
+                    </div>
+                    <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio amet cumque aspernatur, voluptatem autem doloribus et, "</p>
+                    <h4>Jessica Jones</h4>
+                    <h5>Web Designer</h5>
+                </div>
+
+            </a>
+
+          </div>
+
+
+        
+
+
+
+
+
+
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script type="text/javascript">
+
+           $(document).ready(function(){
+            $('.carousel').carousel({
+                padding: 200
+            });
+            autoplay();
+            function autoplay(){
+                $('.carousel').carousel('next');
+                setTimeout(autoplay, 4500);
+            }
+           });
+
+
+        </script>
+    </body>
+</html>

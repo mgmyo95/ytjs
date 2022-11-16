@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Text Effect</title>
+      <link href="./libs/fontawesomepro/css/all.min.css" rel="stylesheet" type="text/css" />
+      <style type="text/css">
+         *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:sans-serif;
+            list-style-type:none;
+         }
+         body{
+            min-height:100vh;
+            background:#165666;
+
+            /* display:flex;
+            justify-content:center;
+            align-items:center; */
+         }
+         nav{
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            display:flex;
+            justify-content: space-between;
+            align-items:center;
+            padding:40px 100px;
+            z-index:1;
+
+            transition:all 0.6s;
+         }
+
+         nav.sticky{
+            background:#fff;
+            padding:5px 100px;
+         }
+
+         nav .brand{
+            position:relative;
+            font-weight:700;
+            color:#fff;
+            text-decoration: none;
+            font-size:2em;
+            letter-spacing: 2px;
+            text-transform:uppercase;
+         }
+         nav ul{
+            position:relative;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+         }
+
+         nav ul li{
+           position:relative;
+           list-style:none;
+
+         }
+
+         nav ul li a{
+            position:relative;
+            margin:0 15px;
+            text-decoration: none;
+            color:#fff;
+            letter-spacing:2px;
+            font-weight:500;
+            transition:0.6s;
+         }
+
+         .banner{
+            position:relative;
+            width:100%;
+            height:100vh;
+            background:red;
+            clip-path:polygon(0 0, 100% 0 , 100% 80%, 0 100%);
+         }
+
+         nav.sticky .brand{
+            color:#000;
+         }
+
+         nav.sticky ul li a{
+            color:#000;
+         }
+         .panner{
+            width:100%;
+            height:1000px;
+         }
+         
+       
+         
+      </style>
+      <body>
+
+         <nav>
+            <a href="" class="brand">Ravi Ed</a>
+
+            <ul>
+               <li><a href="#">Home</a></li>
+               <li><a href="#">About</a></li>
+               <li><a href="#">Serives</a></li>
+               <li><a href="#">Profolio</a></li>
+               <li><a href="#">Team</a></li>
+               <li><a href="#">Contact<a></li>
+            </ul>
+         </nav>
+
+         <div class="banner"></div>
+         <div class="panner"></div>
+
+    
+
+
+
+
+         <script type="text/javascript">
+
+            window.onscroll = ()=>{
+               let nav = document.querySelector('nav');
+               if(window.pageYOffset > 0){
+                  nav.classList.add('sticky');
+               }else{
+                  nav.classList.remove('sticky');
+               }
+            }
+       
+
+    
+          
+          
+         
+         </script>
+      </body>
+   </head>
+</html>

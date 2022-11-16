@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Text Effect</title>
+      <link href="libs/fontawesomepro/css/all.min.css" rel="stylesheet" type="text/css" />
+      <style type="text/css">
+          *{
+             margin:0;
+             padding:0;
+             box-sizing:border-box;
+             list-style-type:none;
+             font-family:sans-serif;
+          }
+          body{
+             height:100vh;
+             background:#333;
+/* 
+             display:flex;
+             justify-content:center;
+             align-items:center; */
+          }
+          nav{
+            position:fixed;
+                top:0;
+                left:0;
+                z-index:10;
+             width:100%;
+             background:coral;
+             display:flex;
+             justify-content:space-between;
+             align-items:center;
+             padding:20px 40px;
+             transition:all 0.6s;
+          }
+          nav.sticky{
+             background:#fff;
+             padding:10px 40px;
+          }
+          nav .brand-title{
+             color:#fff;
+             font-size:24px;
+             font-weight:bold;
+             text-transform:uppercase;
+          }
+          .navlink ul{
+             margin:0;
+             padding:0;
+             display:flex;
+          }
+          nav.sticky ul li a,
+          nav.sticky .brand-title{
+             color:#000;
+          }
+          nav.sticky ul li:hover a{
+             color:#fff;
+          }
+          nav.sticky .menu-bar div{
+             background-color:#333;
+          }
+          .navlink ul li a{
+             text-decoration:none;
+             color:#fff;
+             margin:0 15px;
+             font-size:20px;
+             font-weight:bold;
+             padding:1rem;
+          }
+          .navlink ul li:hover a{
+             background:rgb(110, 33, 5);
+             border-radius:5px;
+          }
+
+          .menu-bar{
+             cursor:pointer;
+             z-index:1;
+             position:absolute;
+             right:10px;
+             display:none;
+             
+          }
+          .menu-bar div{
+             width:35px;
+             height:5px;
+             background:#fff;
+             border-radius:7px;
+             transition-duration:0.5s;
+          }
+          .menu-bar .bar1,
+          .menu-bar .bar2{
+             margin-bottom:5px;
+          }
+
+          .menu-bar.active .bar1{
+             transform:translate(0,14px) rotate(45deg);
+          }
+          .menu-bar.active .bar2{
+             transform:translateX(-55px);
+             background:transparent;
+          }
+          .menu-bar.active .bar3{
+             transform:translate(0,-14px) rotate(-45deg);
+          }
+
+          @media (max-width : 500px){
+             .menu-bar{
+                display:flex;
+                flex-direction:column;
+                justify-content:space-between;
+             }
+             nav{
+                width:100%;
+                flex-direction:column;
+                align-items:flex-start;
+             }
+             .navlink{
+                width:100%;
+                text-align:center;
+                display:none;
+             }
+             .navlink ul{
+                width:100%;
+                margin:0 auto;
+                flex-direction:column;
+                justify-content:center;
+             }
+             .navlink ul li{
+                width:100%;
+                padding:20px 0;
+             }
+             .navlink ul li a{
+                
+                width:100%;
+                margin:0;
+                
+            }
+             .navlink.active{
+                display:flex;
+             }
+          }
+          .banner{
+             width:100%;
+             height:100vh;
+             background:blue;
+          }
+          .pander{
+            width:100%;
+             height:100vh;
+             background:green;
+          }
+         
+        
+      </style>
+   </head>
+   <body>
+
+      <nav>
+         <div class="brand-title">
+            Brand name
+         </div>
+
+         <div class="menu-bar" onclick="changemenuicon()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+         </div>
+          
+         <div class="navlink">
+         <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+         </ul>
+         </div>  
+      </nav>
+      <div class="banner"></div>
+      <div class="pander">
+
+      </div>
+
+
+  
+
+    
+     
+
+
+
+
+      <script type="text/javascript">
+
+         let menubars = document.querySelectorAll('.menu-bar');
+         let nav_link = document.querySelector('.navlink');
+
+         function changemenuicon(){
+            for(var active = 0 ; active < menubars.length ; active++){
+               menubars[active].classList.toggle("active");
+            };
+
+            nav_link.classList.toggle('active');
+         }
+
+         window.onscroll = ()=>{
+            let nav = document.querySelector('nav');
+            if(window.pageYOffset > 0){
+               nav.classList.add('sticky');
+
+            }else{
+               nav.classList.remove('sticky');
+            }
+         }
+   
+
+        
+
+       
+
+    
+
+
+
+
+      </script>
+   </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Typing</title>
+        <style type="text/css">
+            *{
+                margin:0;
+                padding:0;
+                box-sizing:border-box;
+            }
+            body{
+                font-family:sans-serif;
+                height:100vh;
+                background:#010718;
+
+                display:grid;
+                place-items:center;
+            }
+
+            .container .text{
+              position:relative;
+              color:#4070f4;
+              font-size:30px;
+              font-weight:bold;
+            }
+
+            .container{
+                width:246px;
+                overflow:hidden;
+            }
+
+            .container .text.first-text{
+                color:#fff;
+            }
+
+            .container .text.sec-text::before{
+                content:'';
+                position:absolute;
+                top:0;
+                left:0;
+                height:100%;
+                width:100%;
+                background-color:#010718;
+                border-left:2px solid #4070f4;
+                animation:animate 4s steps(12) infinite;
+            }
+
+            @keyframes animate{
+                40%,60%{
+                    left:calc(100% + 5px);
+                }
+
+                100%{
+                    left:0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="container">
+            <span class="text first-text">I'm a</span>
+            <span class="text sec-text">Freelancer</span>
+        
+
+
+    </div>
+
+
+
+        <script type="text/javascript">
+            const text = document.querySelector('.sec-text');
+
+            const textLoad = ()=>{
+                setTimeout(()=>{
+                    text.textContent = "Freelancer"
+                },0);
+
+                setTimeout(()=>{
+                    text.textContent = "Blogger"
+                },4000);
+
+                setTimeout(()=>{
+                    text.textContent = "YouTuber"
+                },8000);
+            }
+
+            textLoad();
+            setInterval(textLoad,12000);
+        </script>
+    </body>
+</html>
